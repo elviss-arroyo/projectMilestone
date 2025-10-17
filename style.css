@@ -1,0 +1,118 @@
+body { /* main page area */
+margin: 0; /* removes the default margin */
+padding: 0; /* removes the default default padding */
+font-family: "Times New Roman", Times, serif; /* font style */
+background-color: #000000; /* black background */
+color: #ffffff; /* text color white */
+line-height: 2; /* spacing between lines */
+}
+
+a { /* links */
+color: #6fc276; /* green links */
+}
+
+a:hover { /* hover over links */
+color: #4021f5; /* blue when hover */
+text-decoration: underline; /* underline on hover */
+}
+
+
+header { /* top header */
+background-color: #383633; /* dark gray */
+color: #ffffff; /* text white */
+padding: 30px 0; /* space top and bottom */
+text-align: center; /* center text */
+border-bottom: 1px solid #1c1b1a; /* bottom border */
+}
+
+
+nav { /* table of contents background */
+background-color: #1c1b1a; /* gray */
+}
+
+nav ul { /* list inside table of contents */
+display: flex; /* horizontal layout */
+justify-content: center; /* center items */
+list-style: none; /* remove bullets */
+margin: 0; /* remove margin */
+padding: 10px 0; /* spacing top & bottom */
+}
+
+nav ul li { /* slects each item */
+margin: 0 15px; /* space between items */
+}
+
+nav ul li a { /* links in menu */
+color: #ffffff; /* white text */
+font-weight: bold; /* bold */
+padding: 5px 10px; /* padding inside box */
+display: inline-block; /* clickable box */
+}
+
+nav ul li a:hover { /* hover effect */
+background-color: #383633; /* dark gray bg */
+border-radius: 5px; /* round corners */
+}
+
+
+main {
+display: flex; /* flex layout */
+flex-direction: column; /* stack vertical */
+align-items: center; /* center horizontal */
+padding: 20px; /* inside spacing */
+}
+
+section { /* each section */
+background-color: #1c1b1a; /* background color */
+padding: 20px; /* inside padding */
+margin-bottom: 20px; /* space below section */
+border: 1px solid #383633; /* border color */
+border-radius: 5px; /* rounded corners */
+max-width: 900px; /* max width */
+width: 90%; /* relative width */
+}
+
+h2, h3 { /* headings inside section */
+margin-top: 0; /* remove top space */
+}
+
+ul, ol { /* lists */
+margin-left: 20px; /* indent */
+padding-left: 20px; /* extra space */
+}
+
+ul li, ol li { /* list items */
+margin-bottom: 10px; /* space below each */
+}
+
+
+footer { /* bottom */
+background-color: #383633; /* gray */
+color: #ffffff; /* text white */
+text-align: center; /* center text */
+padding: 15px 10px; /* padding inside */
+border-top: 1px solid #1c1b1a; /* top border */
+}
+
+img { /* image */
+display: block; /* block element */
+margin: 20px auto; /* center image */
+border-radius: 10px; /* round corners */
+max-width: 90%; /* responsive width */
+height: auto; /* maintain ratio */
+}
+
+
+
+#toc { /* Table of contents */
+max-width: 900px; /* max width */
+width: 90%; /* relative width */
+}
+
+#toc ul li { /* Table of contents items */
+margin-bottom: 10px; /* spacing */
+}
+nav ul li { 
+margin: 5px 0; /* smaller spacing */
+}
+}
