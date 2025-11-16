@@ -126,7 +126,7 @@ function gradeQuiz() {
         }
     }
 
-    // check Q5 (NOOB VERSION)
+    // check Q5 
     let picked = [];
     for (let i = 0; i < a5.length; i++) {
         picked.push(a5[i].value);
@@ -152,11 +152,11 @@ function gradeQuiz() {
         score = score + pointsPerQuestion;
     }
 
-    // determine pass or fail
+    //  pass or fail
     let message = "";
     let cssClass = "";
 
-    if (score >= 70) { // passing score
+    if (score >= 70) { // passing 
         message = "PASS";
         cssClass = "pass"; // green text
     } else {
