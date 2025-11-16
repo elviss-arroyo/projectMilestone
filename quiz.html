@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"> <!-- makes letters show -->
+<meta charset="UTF-8"> <!-- makes letterrs show -->
 <title>Quiz</title> <!-- title on browser tab -->
 <link rel="stylesheet" href="style.css"> <!-- link to css file for styles -->
 
@@ -61,16 +61,14 @@
 <label><input type="checkbox" name="msq5" value="PUT"> PUT</label><br>
 <label><input type="checkbox" name="msq5" value="GET"> GET</label><br>
 <label><input type="checkbox" name="msq5" value="DELETE"> DELETE</label><br>
-<label><input type="checkbox" name="msq5" value="PATCH"> PROVOKE</label><br>
+<label><input type="checkbox" name="msq5" value="PROVOKE"> PROVOKE</label><br>
 
 
- 
 <button type="button" onclick="gradeQuiz()">Submit</button> <!-- button checks answers -->
 <button type="button" onclick="retake()">Reset</button> <!-- button resets quiz -->
 
 </form>
 
- 
 
 <div id="result"></div> <!-- results view -->
 
@@ -84,11 +82,11 @@
 <script>
 
 function gradeQuiz() {
+
     let score = 0; // score at 0
     const totalPoints = 100; // total points 
     const pointsPerQuestion = totalPoints / 5; // points eachh question
 
-    
     const correct1 = "Hypertext Transfer Protocol"; // fill in blank answer
     const correct2 = "A"; // answer for quesiton 2 
     const correct3 = "B"; // answer for quesiton 3 
@@ -101,45 +99,57 @@ function gradeQuiz() {
     let a3 = document.querySelector('input[name="mcq3"]:checked'); // Q3
     let a4 = document.querySelector('input[name="mcq4"]:checked'); // Q4
     let a5 = document.querySelectorAll('input[name="msq5"]:checked'); // Q5
-    
+
     // check Q1
-    if (a1.toLowerCase() === correct1.toLowerCase()) {
-        score += pointsPerQuestion; // add points
+    if (a1.toLowerCase() == correct1.toLowerCase()) {
+        score = score + pointsPerQuestion; // add points
     }
 
     // check Q2
-    if (a2 && a2.value === correct2) {
-        score += pointsPerQuestion;
+    if (a2) {
+        if (a2.value == correct2) {
+            score = score + pointsPerQuestion;
+        }
     }
 
     // check Q3
-    if (a3 && a3.value === correct3) {
-        score += pointsPerQuestion;
+    if (a3) {
+        if (a3.value == correct3) {
+            score = score + pointsPerQuestion;
+        }
     }
 
     // check Q4
-    if (a4 && a4.value === correct4) {
-        score += pointsPerQuestion;
+    if (a4) {
+        if (a4.value == correct4) {
+            score = score + pointsPerQuestion;
+        }
     }
 
-    // check Q5
-    let msq5Score = 0; // Q5 score
-    if (a5.length > 0) {
-        // this counts the selections to see right or wrong
-        let correctSelections = 0; // correct count
-        let incorrectSelections = 0; // incorrect count
-        
-        a5.forEach(checkbox => {
-            if (correct5.includes(checkbox.value)) {
-                correctSelections++; // add to correct
-            } else {
-                incorrectSelections++; // add to incorrect
-            }
-        });
-        
-        // calculate 
-        msq5Score = Math.max(0, (correctSelections - incorrectSelections) / correct5.length) * pointsPerQuestion;
-        score += msq5Score; // add to total score
+    // check Q5 (NOOB VERSION)
+    let picked = [];
+    for (let i = 0; i < a5.length; i++) {
+        picked.push(a5[i].value);
+    }
+
+    let isCorrect = true;
+
+    // check if missing a correct one
+    for (let i = 0; i < correct5.length; i++) {
+        if (!picked.includes(correct5[i])) {
+            isCorrect = false;
+        }
+    }
+
+    // check if picked something extra
+    for (let i = 0; i < picked.length; i++) {
+        if (!correct5.includes(picked[i])) {
+            isCorrect = false;
+        }
+    }
+
+    if (isCorrect === true) {
+        score = score + pointsPerQuestion;
     }
 
     // determine pass or fail
@@ -156,14 +166,14 @@ function gradeQuiz() {
 
     // show results
     document.getElementById("result").innerHTML =
-        `<h3 class="${cssClass}">Result: ${message}</h3>
-         <p>Score: ${Math.round(score)}%</p>
-         <p><strong>Correct Answers:</strong></p>
-         <p>1: ${correct1}</p>
-         <p>2: ${correct2} (GET)</p>
-         <p>3: ${correct3} (404)</p>
-         <p>4: ${correct4} (HTTPS)</p>
-         <p>5: ${correct5.join(", ")}</p>`;
+        "<h3 class='" + cssClass + "'>Result: " + message + "</h3>" +
+        "<p>Score: " + Math.round(score) + "%</p>" +
+        "<p><strong>Correct Answers:</strong></p>" +
+        "<p>1: " + correct1 + "</p>" +
+        "<p>2: " + correct2 + " (GET)</p>" +
+        "<p>3: " + correct3 + " (404)</p>" +
+        "<p>4: " + correct4 + " (HTTPS)</p>" +
+        "<p>5: " + correct5.join(', ') + "</p>";
 }
 
 // retake quiz
