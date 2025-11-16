@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"> <!-- makes letters show -->
+<title>Quiz</title> <!-- title on browser tab -->
+<link rel="stylesheet" href="style.css"> <!-- link to CSS file -->
+
+<style>
+ /* style for feedback colors */
+ .pass { color: green; } /* green text if pass */
+ .fail { color: red; } /* red text if fail */
+</style>
+</head>
+
+<body>
+
+<header> <!-- top part with page title -->
+<h1>Quiz</h1> <!-- heading -->
+<nav> <!-- navigation menu -->
+<ul>
+<li><a href="index.html">Home</a></li> <!-- home -->
+<li><a href="how-it-works.html">How HTTP Works</a></li> <!-- page -->
+<li><a href="impact.html">Impact of HTTP</a></li> <!-- page -->
+<li><a href="key-concepts.html">Key Concepts</a></li> <!-- page -->
+<li><a href="reference.html">References & Resources</a></li> <!-- page -->
+<li><a href="about.html">About</a></li> <!-- page -->
+<li><a href="quiz.html">Quiz</a></li> <!-- new quiz page -->
+</ul>
+</nav>
+</header>
+
+<main>
+<section>
+ <!-- title -->
+
+<!-- quiz form -->
+<form id="exam"> <!-- form that holds quiz -->
+
+<!-- fill in the blank question -->
+<p><strong>1. Fill in the blank:</strong></p>
+<input type="text" id="answer1"> <!-- user types answer -->
+
+<!-- multiple choice question 2 -->
+<p><strong>2. Multiple choice:</strong></p>
+<label><input type="radio" name="mcq2" value="A"> Option A</label><br>
+<label><input type="radio" name="mcq2" value="B"> Option B</label><br>
+<label><input type="radio" name="mcq2" value="C"> Option C</label><br>
+
+<!-- multiple choice question 3 -->
+<p><strong>3. Multiple choice:</strong></p>
+<label><input type="radio" name="mcq3" value="A"> Option A</label><br>
+<label><input type="radio" name="mcq3" value="B"> Option B</label><br>
+<label><input type="radio" name="mcq3" value="C"> Option C</label><br>
+
+<!-- multiple choice question 4 -->
+<p><strong>4. Multiple choice:</strong></p>
+<label><input type="radio" name="mcq4" value="A"> Option A</label><br>
+<label><input type="radio" name="mcq4" value="B"> Option B</label><br>
+<label><input type="radio" name="mcq4" value="C"> Option C</label><br>
+
+<!-- submit button -->
+<button type="button" onclick="gradeQuiz()">Submit</button> <!-- button checks answers -->
+<button type="button" onclick="retake()">Reset</button> <!-- button resets quiz -->
+
+</form>
+
+<!-- area where results will appear -->
+<div id="result"></div> <!-- empty box for score -->
+
+</section>
+</main>
+
+<footer>
+<p>This is a class project <a href="https://ksuweb.github.io/IT3203/" target="_blank">https://ksuweb.github.io/IT3203/</a>.</p>
+</footer>
+
+<script>
+// function runs when user hits submit
+function gradeQuiz() {
+    let score = 0; // score counter starts at 0
+
+    // store the correct answers here
+    const correct1 = ""; // fill in blank answer
+    const correct2 = ""; // correct letter A/B/C
+    const correct3 = ""; // correct letter A/B/C
+    const correct4 = ""; // correct letter A/B/C
+
+    // get user answers
+    let a1 = document.getElementById("q1").value.trim(); // answer to Q1
+    let a2 = document.querySelector('input[name="mcq2"]:checked'); // Q2
+    let a3 = document.querySelector('input[name="mcq3"]:checked'); // Q3
+    let a4 = document.querySelector('input[name="mcq4"]:checked'); // Q4
+
+    // check Q1
+    if (a1.toLowerCase() === correct1.toLowerCase()) {
+        score += 25; // add 25 points
+    }
+
+    // check Q2 only if answered
+    if (a2 && a2.value === correct2) {
+        score += 25;
+    }
+
+    // check Q3
+    if (a3 && a3.value === correct3) {
+        score += 25;
+    }
+
+    // check Q4
+    if (a4 && a4.value === correct4) {
+        score += 25;
+    }
+
+    // determine pass or fail
+    let message = "";
+    let cssClass = "";
+
+    if (score >= 70) { // passing score
+        message = "PASS";
+        cssClass = "pass"; // green text
+    } else {
+        message = "FAIL";
+        cssClass = "fail"; // red text
+    }
+
+    // show results
+    document.getElementById("result").innerHTML =
+        `<h3 class="${cssClass}">Result: ${message}</h3>
+         <p>Score: ${score}%</p>
+         <p><strong>Correct Answers:</strong></p>
+         <p>1: ${correct1}</p>
+         <p>2: ${correct2}</p>
+         <p>3: ${correct3}</p>
+         <p>4: ${correct4}</p>`;
+}
+
+// function to reset quiz
+function retake() {
+    document.getElementById("exam").reset(); // reset form
+    document.getElementById("result").innerHTML = ""; // clear result box
+}
+</script>
+
+</body>
+</html>
 
