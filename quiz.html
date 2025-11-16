@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"> <!-- makes letters show -->
 <title>Quiz</title> <!-- title on browser tab -->
-<link rel="stylesheet" href="style.css"> <!-- link to CSS file -->
+<link rel="stylesheet" href="style.css"> <!-- link to css file for styles -->
 
 <style>
  .pass { color: green; } /* green pass */
@@ -33,44 +33,46 @@
 
 <form id="exam"> <!-- form that holds quiz -->
 
-<!-- Fill in the blank question -->
-<p><strong>1. Fill in the blank: What does HTTP stand for?</strong></p> <!-- fill in the blank question -->
+
+<p><strong>1. Fill in the blank: What does HTTP stand for?(HINT: 3 Word Answer) </strong></p> <!-- fill in the blank question -->
 <input type="text" id="answer1"> <!-- type answer -->
 
-<!-- Multiple choice question -->
-<p><strong>2. Which HTTP method is used to retrieve data from a server?</strong></p> <!-- multiple choice question -->
+
+<p><strong>2. Which HTTP method is used to get data ?</strong></p> <!-- multiple choice question -->
 <label><input type="radio" name="mcq2" value="A"> GET</label><br>
 <label><input type="radio" name="mcq2" value="B"> POST</label><br>
 <label><input type="radio" name="mcq2" value="C"> DELETE</label><br>
 
-<!-- Multiple choice question -->
-<p><strong>3. Which HTTP status code indicates "Not Found"?</strong></p> <!-- multiple choice question -->
+ 
+<p><strong>3. Which HTTP code shows "Not Found"?</strong></p> <!-- multiple choice question -->
 <label><input type="radio" name="mcq3" value="A"> 200</label><br>
 <label><input type="radio" name="mcq3" value="B"> 404</label><br>
 <label><input type="radio" name="mcq3" value="C"> 500</label><br>
 
-<!-- Multiple choice question -->
-<p><strong>4. Which protocol is used for secure HTTP communication?</strong></p> <!-- multiple choice question -->
-<label><input type="radio" name="mcq4" value="A"> FTP</label><br>
+ 
+<p><strong>4. The protocol used for secure Hypertext Transfer Protocol (HTTP) communication is</strong></p> <!-- multiple choice question -->
+<label><input type="radio" name="mcq4" value="A"> ABC</label><br>
 <label><input type="radio" name="mcq4" value="B"> HTTPS</label><br>
-<label><input type="radio" name="mcq4" value="C"> SMTP</label><br>
+<label><input type="radio" name="mcq4" value="C"> 123</label><br>
 
-<!-- Multi-selection question -->
+
 <p><strong>5. Select all HTTP methods that modify server data:</strong></p> <!-- multi-selection question -->
 <label><input type="checkbox" name="msq5" value="POST"> POST</label><br>
 <label><input type="checkbox" name="msq5" value="PUT"> PUT</label><br>
 <label><input type="checkbox" name="msq5" value="GET"> GET</label><br>
 <label><input type="checkbox" name="msq5" value="DELETE"> DELETE</label><br>
-<label><input type="checkbox" name="msq5" value="PATCH"> PATCH</label><br>
+<label><input type="checkbox" name="msq5" value="PATCH"> PROVOKE</label><br>
 
-<!-- Submit and reset buttons -->
+
+ 
 <button type="button" onclick="gradeQuiz()">Submit</button> <!-- button checks answers -->
 <button type="button" onclick="retake()">Reset</button> <!-- button resets quiz -->
 
 </form>
 
-<!-- area where results will appear -->
-<div id="result"></div> <!-- empty box for score -->
+ 
+
+<div id="result"></div> <!-- results view -->
 
 </section>
 </main>
@@ -80,18 +82,18 @@
 </footer>
 
 <script>
-// function runs when user hits submit
-function gradeQuiz() {
-    let score = 0; // score counter starts at 0
-    const totalPoints = 100; // total points possible
-    const pointsPerQuestion = totalPoints / 5; // points per question
 
-    // store the correct answers here
+function gradeQuiz() {
+    let score = 0; // score at 0
+    const totalPoints = 100; // total points 
+    const pointsPerQuestion = totalPoints / 5; // points eachh question
+
+    
     const correct1 = "Hypertext Transfer Protocol"; // fill in blank answer
-    const correct2 = "A"; // correct letter A/B/C
-    const correct3 = "B"; // correct letter A/B/C
-    const correct4 = "B"; // correct letter A/B/C
-    const correct5 = ["POST", "PUT", "DELETE", "PATCH"]; // multi-selection answers
+    const correct2 = "A"; // answer for quesiton 2 
+    const correct3 = "B"; // answer for quesiton 3 
+    const correct4 = "B"; // answer for quesiton 4 
+    const correct5 = ["POST", "PUT", "DELETE", "PATCH"]; // multiple chouice answers
 
     // get user answers
     let a1 = document.getElementById("answer1").value.trim(); // answer to Q1
@@ -105,7 +107,7 @@ function gradeQuiz() {
         score += pointsPerQuestion; // add points
     }
 
-    // check Q2 only if answered
+    // check Q2
     if (a2 && a2.value === correct2) {
         score += pointsPerQuestion;
     }
@@ -123,7 +125,7 @@ function gradeQuiz() {
     // check Q5 (multi-selection)
     let msq5Score = 0; // Q5 score
     if (a5.length > 0) {
-        // count correct selections
+        // this counts the selections to see right or wrong
         let correctSelections = 0; // correct count
         let incorrectSelections = 0; // incorrect count
         
@@ -135,7 +137,7 @@ function gradeQuiz() {
             }
         });
         
-        // calculate partial credit
+        // calculate 
         msq5Score = Math.max(0, (correctSelections - incorrectSelections) / correct5.length) * pointsPerQuestion;
         score += msq5Score; // add to total score
     }
@@ -164,10 +166,10 @@ function gradeQuiz() {
          <p>5: ${correct5.join(", ")}</p>`;
 }
 
-// function to reset quiz
+// retake quiz
 function retake() {
     document.getElementById("exam").reset(); // reset form
-    document.getElementById("result").innerHTML = ""; // clear result box
+    document.getElementById("result").innerHTML = ""; // clear result box 
 }
 </script>
 
