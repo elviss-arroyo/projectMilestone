@@ -31,7 +31,7 @@
 <main>
 <section>
 
-<form id="exam"> <!-- form that holds quiz -->
+<form id="exam">
 
 
 <p><strong>1. Fill in the blank: What does HTTP stand for?(HINT: 3 Word Answer) </strong></p> <!-- fill in the blank question -->
@@ -65,7 +65,7 @@
 
 
 <button type="button" onclick="gradeQuiz()">Submit</button> <!-- button checks answers -->
-<button type="button" onclick="retake()">Reset</button> <!-- button resets quiz -->
+<button type="button" onclick="retake()">Reset</button> <!-- button to resets the quiz -->
 
 </form>
 
@@ -141,7 +141,7 @@ function gradeQuiz() {
         }
     }
 
-    // check if picked something extra
+    // check if picked somethiing extra
     for (let i = 0; i < picked.length; i++) {
         if (!correct5.includes(picked[i])) {
             isCorrect = false;
@@ -152,7 +152,7 @@ function gradeQuiz() {
         score = score + pointsPerQuestion;
     }
 
-    //  pass or fail
+    //  pass or fali
     let message = "";
     let cssClass = "";
 
