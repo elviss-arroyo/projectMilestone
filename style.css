@@ -116,3 +116,49 @@ nav ul li {
 margin: 5px 0; /* smaller spacing */
 }
 }
+/* ----------------------------
+   MOBILE STYLES
+   Target: screens 600px wide or smaller
+-------------------------------*/
+@media (max-width: 600px) {             /* Apply all styles inside this block only if screen width is 600px or less */
+
+  /* Make nav links stack vertically as wide buttons */
+  .menu a {                             /* Select all links inside the navigation menu */
+    display: block;                      /* Make each link appear on its own line (stacked) */
+    width: 100%;                         /* Make each link take up the full width of the container */
+    text-align: center;                  /* Center the text inside each link */
+    padding: 15px;                       /* Add space inside each link to make it easier to tap */
+    margin-bottom: 8px;                  /* Add space between each link */
+    font-size: 1.2rem;                   /* Increase the text size for readability */
+    background-color: #e0e0e0;           /* Set a light gray background color for the button */
+    border: 1px solid #ccc;              /* Add a thin border around each button */
+    border-radius: 6px;                  /* Round the corners of the button */
+    text-decoration: none;               /* Remove the underline from links */
+  }
+
+  /* Enlarge font site-wide */
+  body {                                 /* Select the entire page */
+    font-size: 1.2rem;                   /* Increase the base text size for easier reading on small screens */
+    line-height: 1.5;                    /* Add extra spacing between lines for readability */
+    padding: 10px;                        /* Add some padding inside the page so text isn't touching screen edges */
+  }
+
+  /* Make buttons bigger */
+  button {                               /* Select all <button> elements */
+    font-size: 1.2rem;                   /* Increase text size inside buttons */
+    padding: 12px 20px;                  /* Increase spacing inside buttons so they are easier to tap */
+  }
+
+  /* Make images scale to screen width */
+  img {                                  /* Select all images */
+    max-width: 100%;                     /* Ensure images do not get wider than their container */
+    height: auto;                        /* Keep image height proportional to width */
+    display: block;                      /* Make images block elements to prevent weird spacing */
+    margin: 0 auto;                      /* Center images horizontally on the page */
+  }
+
+  /* Optional: spacing adjustments for sections */
+  section, article {                     /* Select all <section> and <article> elements */
+    padding: 10px 0;                     /* Add vertical spacing inside sections/articles */
+  }
+}                                       /* End of mobile media query */
