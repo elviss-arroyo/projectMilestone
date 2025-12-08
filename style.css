@@ -176,12 +176,14 @@ img { /* image */
 @media (max-width: 600px) {
 
     /* Use grid for nav to allow side-by-side buttons */
-    nav ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-        gap: 10px; /* spacing between buttons */
-        padding: 10px;
-    }
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px;
+    padding: 10px;
+    align-items: stretch; /* make all items same height in each row */
+}
+
 
     nav ul li {
         margin: 0; /* remove vertical spacing, handled by gap */
