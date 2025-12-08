@@ -175,14 +175,23 @@ img { /* image */
 -------------------------------*/
 @media (max-width: 600px) {
 
+    /* Use grid for nav to allow side-by-side buttons */
     nav ul {
-        flex-direction: column; /* stack buttons vertically */
-        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 10px; /* spacing between buttons */
+        padding: 10px;
     }
 
     nav ul li {
-        width: 100%; /* full width buttons */
-        margin: 8px 0; /* vertical spacing between buttons */
+        margin: 0; /* remove vertical spacing, handled by gap */
+    }
+
+    /* Full-width buttons */
+    nav ul li:first-child, /* Home */
+    nav ul li:nth-child(4), /* Key Concepts */
+    nav ul li:last-child { /* About */
+        grid-column: span 2; /* span both columns */
     }
 
     nav ul li a {
@@ -191,8 +200,8 @@ img { /* image */
         text-align: center; /* center text */
         padding: 15px; /* inside button spacing */
         font-size: 1.5rem; /* larger text */
-        background-color: #b0b0b0; /* lighter gray for better contrast */
-        color: #000000; /* black text for contrast */
+        background-color: #b0b0b0; /* lighter gray for contrast */
+        color: #000000; /* black text */
         border: 1px solid #808080; /* gray border */
         border-radius: 6px; /* rounded corners */
         text-decoration: none; /* no underline */
@@ -202,7 +211,7 @@ img { /* image */
 
     nav ul li a:hover {
         background-color: #808080; /* darker gray on hover */
-        color: #ffffff; /* text becomes white for better contrast */
+        color: #ffffff; /* text becomes white */
     }
 
     section { /* sections on mobile */
