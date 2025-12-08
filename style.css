@@ -126,6 +126,20 @@ img { /* image */
     margin-bottom: 10px; /* spacing */
 }
 
+    /* Enlarge quiz submit and reset buttons for mobile */
+    input[type="submit"],
+    button[type="submit"],
+    input[type="reset"],
+    button[type="reset"] {
+        font-size: 2rem;   /* bigger text */
+        padding: 15px 30px;  /* bigger button */
+        border-radius: 8px;  /* rounded corners */
+        cursor: pointer;     /* pointer on hover */
+    
+
+}
+
+
 /* ----------------------------
    TABLET STYLES
    screens 768px – 1024px
@@ -207,15 +221,3 @@ img { /* image */
         font-size: 1.4rem;
     }
 
-    /* Enlarge quiz submit and reset buttons for mobile */
-    input[type="submit"],
-    button[type="submit"],
-    input[type="reset"],
-    button[type="reset"] {
-        font-size: 2rem;   /* bigger text */
-        padding: 15px 30px;  /* bigger button */
-        border-radius: 8px;  /* rounded corners */
-        cursor: pointer;     /* pointer on hover */
-    }
-
-}
