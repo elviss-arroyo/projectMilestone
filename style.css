@@ -167,17 +167,7 @@ img { /* image */
 -------------------------------*/
 @media (max-width: 600px) {
 
-    /* Hide menu by default on mobile */
-    nav ul {
-        display: none; /* hidden by default */
-        flex-direction: column; /* stack links vertically */
-        align-items: center; /* center links */
-        width: 100%; /* ensure full width */
-        padding: 0; /* remove extra padding */
-    }
 
-    nav ul.show {
-        display: flex; /* show when button clicked */
     }
 
     nav ul li {
