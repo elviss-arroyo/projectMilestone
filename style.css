@@ -134,25 +134,41 @@ img { /* image */
     cursor: pointer;     /* pointer on hover */
 }
 
-/* Shared mobile/tablet menu */
+/* ----------------------------
+   Shared mobile/tablet menu
+-------------------------------*/
 #myLinks {
-  display: none;          /* hidden by default */
-  flex-direction: column; /* stack links vertically */
-  background-color: #000; /* menu background */
+  display: flex;           /* show on desktop by default */
+  flex-direction: row;     /* horizontal on desktop */
+  background-color: #1c1b1a; /* match nav */
   padding: 10px;
 }
 
-#myLinks.show {
-  display: block;         /* shown when toggled */
-}
-
 #myLinks li {
-  margin: 8px 0;          /* spacing between links */
+  margin: 0 15px;          /* desktop spacing */
 }
 
 #myLinks li a {
   color: #fff;
   text-decoration: none;
+}
+
+/* Tablet & Mobile: hide menu by default, show on toggle */
+@media (max-width: 1024px) {
+    #myLinks {
+        display: none;          /* hidden on tablet/mobile */
+        flex-direction: column; /* vertical stack */
+        background-color: #000; /* menu background */
+        padding: 10px;
+    }
+
+    #myLinks.show {
+        display: block;         /* show when toggled */
+    }
+
+    #myLinks li {
+        margin: 8px 0;          /* spacing between links */
+    }
 }
 
 /* ----------------------------
