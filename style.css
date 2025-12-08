@@ -1,3 +1,7 @@
+html {
+    font-size: 110%;
+}
+
 body { /* main page area */
 margin: 0; /* removes the default margin */
 padding: 0; /* removes the default default padding */
