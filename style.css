@@ -7,11 +7,11 @@ html {
 
 body { /* main page area */
     margin: 0; /* removes the default margin */
-    padding: 0; /* removes the default default padding */
+    padding: 0; /* removes the default padding */
     font-family: "Times New Roman", Times, serif; /* font style */
     background-color: #000000; /* black background */
     color: #ffffff; /* text color white */
-    line-height: 2; /* spacing between lines */
+    line-height: 1.75; /* spacing between lines improved readability */
     font-size: 1.2rem; /* slightly larger body text */
 }
 
@@ -126,23 +126,13 @@ img { /* image */
     margin-bottom: 10px; /* spacing */
 }
 
-    /* Enlarge quiz submit and reset buttons for mobile */
 /* Enlarge all quiz buttons */
-input[type="submit"],
-input[type="reset"],
-button[type="submit"],
-button[type="reset"],
-button[type="button"] {   /* <- add this line */
-    font-size: 2rem;   
-    padding: 15px 30px;  
-    border-radius: 8px;  
-    cursor: pointer;     
+#exam button {
+    font-size: 2rem !important;   /* bigger text */
+    padding: 15px 30px !important;  /* bigger button */
+    border-radius: 8px !important;  /* rounded corners */
+    cursor: pointer !important;     /* pointer on hover */
 }
-
-    
-
-}
-
 
 /* ----------------------------
    TABLET STYLES
@@ -152,7 +142,7 @@ button[type="button"] {   /* <- add this line */
 
     body { /* main page area for tablet */
         font-size: 1.5rem; /* bigger text for all paragraphs */
-        line-height: 2; /* keep spacing */
+        line-height: 1.75; /* keep spacing */
         margin: 0; /* remove large desktop margins */
         padding: 0; /* remove extra padding */
     }
@@ -171,7 +161,7 @@ button[type="button"] {   /* <- add this line */
     }
 
     section { /* each section on tablet */
-        font-size: 1.4rem; /* larger section text */
+        font-size: 2rem; /* keep section font at 2 */
     }
 
     ul li, ol li { /* list items for tablet */
@@ -185,8 +175,13 @@ button[type="button"] {   /* <- add this line */
 -------------------------------*/
 @media (max-width: 600px) {
 
+    nav ul {
+        flex-direction: column; /* stack buttons vertically */
+        padding: 0;
+    }
+
     nav ul li {
-        width: 95%; /* almost full width */
+        width: 100%; /* full width buttons */
         margin: 8px 0; /* vertical spacing between buttons */
     }
 
@@ -196,21 +191,22 @@ button[type="button"] {   /* <- add this line */
         text-align: center; /* center text */
         padding: 15px; /* inside button spacing */
         font-size: 1.5rem; /* larger text */
-        background-color: #8B8680; /* medium gray button */
+        background-color: #b0b0b0; /* lighter gray for better contrast */
         color: #000000; /* black text for contrast */
         border: 1px solid #808080; /* gray border */
         border-radius: 6px; /* rounded corners */
         text-decoration: none; /* no underline */
         box-sizing: border-box; /* prevent overflow */
+        transition: background-color 0.3s, color 0.3s; /* smooth hover */
     }
 
     nav ul li a:hover {
-        background-color: #8f8f8f; /* darker gray on hover */
-        color: #000000;
+        background-color: #808080; /* darker gray on hover */
+        color: #ffffff; /* text becomes white for better contrast */
     }
 
     section { /* sections on mobile */
-        font-size: 1.4rem; /* larger section text */
+        font-size: 2rem; /* keep section font at 2 */
     }
 
     h2, h3 { /* headings on mobile */
@@ -224,4 +220,4 @@ button[type="button"] {   /* <- add this line */
     body { /* body text on mobile */
         font-size: 1.4rem;
     }
-
+}
