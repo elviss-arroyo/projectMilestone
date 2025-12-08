@@ -1,216 +1,165 @@
+/* ----------------------------
+   GLOBAL STYLES
+-------------------------------*/
 html {
-    font-size: 110%; /* Increased from default for overall bigger text */
+    font-size: 120%; /* Increased from default for overall bigger text */
 }
 
 body { /* main page area */
-margin: 0; /* removes the default margin */
-padding: 0; /* removes the default default padding */
-font-family: "Times New Roman", Times, serif; /* font style */
-background-color: #000000; /* black background */
-color: #ffffff; /* text color white */
-line-height: 2; /* spacing between lines */
-font-size: 1.05rem; /* slightly larger body text */
+    margin: 0; /* removes the default margin */
+    padding: 0; /* removes the default default padding */
+    font-family: "Times New Roman", Times, serif; /* font style */
+    background-color: #000000; /* black background */
+    color: #ffffff; /* text color white */
+    line-height: 2; /* spacing between lines */
+    font-size: 1.2rem; /* slightly larger body text */
 }
 
 a { /* links */
-color: #6fc276; /* green links */
-font-size: 1.05rem; /* slightly larger link text */
+    color: #6fc276; /* green links */
+    font-size: 1.2rem; /* slightly larger link text */
 }
 
 a:hover { /* hover over links */
-color: #4021f5; /* blue when hover */
-text-decoration: underline; /* underline on hover */
+    color: #4021f5; /* blue when hover */
+    text-decoration: underline; /* underline on hover */
 }
-
 
 header { /* top header */
-background-color: #383633; /* dark gray */
-color: #ffffff; /* text white */
-padding: 30px 0; /* space top and bottom */
-text-align: center; /* center text */
-border-bottom: 1px solid #1c1b1a; /* bottom border */
-font-size: 1.4rem; /* slightly larger header text */
+    background-color: #383633; /* dark gray */
+    color: #ffffff; /* text white */
+    padding: 30px 0; /* space top and bottom */
+    text-align: center; /* center text */
+    border-bottom: 1px solid #1c1b1a; /* bottom border */
+    font-size: 1.6rem; /* larger header text */
 }
-
 
 nav { /* table of contents background */
-background-color: #1c1b1a; /* gray */
+    background-color: #1c1b1a; /* gray */
 }
 
+/* Desktop navigation default */
 nav ul { /* list inside table of contents */
-display: flex; /* horizontal layout */
-justify-content: center; /* center items */
-list-style: none; /* remove bullets */
-margin: 0; /* remove margin */
-padding: 10px 0; /* spacing top & bottom */
+    display: flex; /* horizontal layout */
+    flex-wrap: wrap; /* allow wrapping for extra large buttons */
+    justify-content: center; /* center items */
+    list-style: none; /* remove bullets */
+    margin: 0; /* remove margin */
+    padding: 10px 0; /* spacing top & bottom */
 }
 
-nav ul li { /* slects each item */
-margin: 0 15px; /* space between items */
+nav ul li { /* selects each item */
+    margin: 0 15px; /* space between items */
 }
 
 nav ul li a { /* links in menu */
-color: #ffffff; /* white text */
-font-weight: bold; /* bold */
-padding: 5px 10px; /* padding inside box */
-display: inline-block; /* clickable box */
-font-size: 1.1rem; /* slightly larger menu text */
+    color: #ffffff; /* white text */
+    font-weight: bold; /* bold */
+    padding: 10px 15px; /* padding inside box */
+    display: inline-block; /* clickable box */
+    font-size: 1.5rem; /* larger menu text */
+    text-align: center; /* center text */
+    border-radius: 8px; /* smoother button shape */
 }
 
 nav ul li a:hover { /* hover effect */
-background-color: #383633; /* dark gray bg */
-border-radius: 5px; /* round corners */
+    background-color: #383633; /* dark gray bg */
+    border-radius: 8px; /* round corners */
 }
 
-
 main {
-display: flex; /* flex layout */
-flex-direction: column; /* stack vertical */
-align-items: center; /* center horizontal */
-padding: 20px; /* inside spacing */
+    display: flex; /* flex layout */
+    flex-direction: column; /* stack vertical */
+    align-items: center; /* center horizontal */
+    padding: 20px; /* inside spacing */
 }
 
 section { /* each section */
-background-color: #1c1b1a; /* background color */
-padding: 20px; /* inside padding */
-margin-bottom: 20px; /* space below section */
-border: 1px solid #383633; /* border color */
-border-radius: 5px; /* rounded corners */
-max-width: 900px; /* max width */
-width: 90%; /* relative width */
-font-size: 1.1rem; /* larger section text */
+    background-color: #1c1b1a; /* background color */
+    padding: 25px; /* inside padding */
+    margin-bottom: 20px; /* space below section */
+    border: 1px solid #383633; /* border color */
+    border-radius: 5px; /* rounded corners */
+    max-width: 900px; /* max width */
+    width: 90%; /* relative width */
+    font-size: 1.3rem; /* larger section text */
 }
 
 h2, h3 { /* headings inside section */
-margin-top: 0; /* remove top space */
-font-size: 1.4rem; /* larger headings */
+    margin-top: 0; /* remove top space */
+    font-size: 2rem; /* larger headings */
 }
 
 ul, ol { /* lists */
-margin-left: 20px; /* indent */
-padding-left: 20px; /* extra space */
+    margin-left: 20px; /* indent */
+    padding-left: 20px; /* extra space */
 }
 
 ul li, ol li { /* list items */
-margin-bottom: 10px; /* space below each */
-font-size: 1.1rem; /* slightly larger list text */
+    margin-bottom: 12px; /* space below each */
+    font-size: 1.3rem; /* larger list text */
 }
 
-
 footer { /* bottom */
-background-color: #383633; /* gray */
-color: #ffffff; /* text white */
-text-align: center; /* center text */
-padding: 15px 10px; /* padding inside */
-border-top: 1px solid #1c1b1a; /* top border */
-font-size: 1.05rem; /* slightly larger footer text */
+    background-color: #383633; /* gray */
+    color: #ffffff; /* text white */
+    text-align: center; /* center text */
+    padding: 15px 10px; /* padding inside */
+    border-top: 1px solid #1c1b1a; /* top border */
+    font-size: 1.2rem; /* larger footer text */
 }
 
 img { /* image */
-display: block; /* block element */
-margin: 20px auto; /* center image */
-border-radius: 10px; /* round corners */
-max-width: 90%; /* responsive width */
-height: auto; /* maintain ratio */
+    display: block; /* block element */
+    margin: 20px auto; /* center image */
+    border-radius: 10px; /* round corners */
+    max-width: 90%; /* responsive width */
+    height: auto; /* maintain ratio */
 }
 
-
 #toc { /* Table of contents */
-max-width: 900px; /* max width */
-width: 90%; /* relative width */
+    max-width: 900px; /* max width */
+    width: 90%; /* relative width */
 }
 
 #toc ul li { /* Table of contents items */
-margin-bottom: 10px; /* spacing */
+    margin-bottom: 10px; /* spacing */
 }
-
-nav ul li { 
-margin: 5px 0; /* smaller spacing */
-}
-
 
 /* ----------------------------
    TABLET STYLES
-   screens 601px – 1024px
+   screens 768px – 1024px
 -------------------------------*/
 @media (max-width: 1024px) and (min-width: 768px) {
 
-  body { /* main page area for tablet */
-    font-size: 1.4rem;          /* bigger text for all paragraphs */
-    line-height: 2;              /* keep spacing */
-    margin: 0;                   /* remove large desktop margins */
-    padding: 0;                  /* remove extra padding */
-  }
+    body { /* main page area for tablet */
+        font-size: 1.5rem; /* bigger text for all paragraphs */
+        line-height: 2; /* keep spacing */
+        margin: 0; /* remove large desktop margins */
+        padding: 0; /* remove extra padding */
+    }
 
-  h2, h3 { /* headings inside section for tablet */
-    font-size: 2.2rem;           /* extra large headings */
-    margin-top: 0;               /* remove top space */
-  }
+    h2, h3 { /* headings inside section for tablet */
+        font-size: 2.5rem; /* extra large headings */
+    }
 
-  nav { /* table of contents background for tablet */
-    background-color: #1c1b1a;   /* keep gray background */
-  }
+    nav ul { /* list inside table of contents for tablet */
+        flex-wrap: wrap; /* allow buttons to move to next line */
+    }
 
-  nav ul { /* list inside table of contents for tablet */
-    display: flex;               /* horizontal layout */
-    justify-content: center;     /* center buttons */
-    flex-wrap: wrap;             /* allow buttons to move to next line */
-    list-style: none;            /* remove bullets */
-    margin: 0;                   /* remove margin */
-    padding: 10px 0;             /* spacing top & bottom */
-  }
+    nav ul li a { /* links in menu for tablet */
+        font-size: 1.8rem; /* extra large nav text */
+        padding: 15px 20px; /* bigger touch area */
+    }
 
-  nav ul li { /* each menu item for tablet */
-    margin: 5px 10px;            /* spacing between buttons */
-  }
+    section { /* each section on tablet */
+        font-size: 1.4rem; /* larger section text */
+    }
 
-  nav ul li a { /* links in menu for tablet */
-    color: #ffffff;              /* white text */
-    font-weight: bold;           /* bold */
-    padding: 12px 18px;          /* bigger touch area */
-    font-size: 1.5rem;           /* extra large nav text */
-    text-align: center;          /* center button text */
-    border-radius: 8px;          /* smoother button shape */
-    display: inline-block;       /* clickable box */
-  }
-
-  nav ul li a:hover { /* hover effect for tablet */
-    background-color: #383633;   /* dark gray bg */
-    border-radius: 8px;          /* round corners */
-  }
-
-  section { /* each section on tablet */
-    background-color: #1c1b1a;   /* background color */
-    padding: 25px;               /* a little more padding */
-    margin-bottom: 20px;         /* space below section */
-    border: 1px solid #383633;   /* border color */
-    border-radius: 5px;          /* rounded corners */
-    max-width: 900px;            /* keep max width */
-    width: 90%;                  /* relative width */
-  }
-
-  ul li, ol li { /* list items for tablet */
-    font-size: 1.25rem;          /* larger list text */
-    margin-bottom: 12px;         /* slightly more spacing */
-  }
-
-  main { /* main content area for tablet */
-    display: flex;               /* flex layout */
-    flex-direction: column;      /* stack vertical */
-    align-items: center;         /* center horizontally */
-    padding: 20px;               /* inside spacing */
-  }
-
-  footer { /* bottom for tablet */
-    background-color: #383633;   /* gray */
-    color: #ffffff;              /* text white */
-    text-align: center;          /* center text */
-    padding: 15px 10px;          /* padding inside */
-    border-top: 1px solid #1c1b1a; /* top border */
-  }
+    ul li, ol li { /* list items for tablet */
+        font-size: 1.35rem; /* larger list text */
+    }
 }
-
-
 
 /* ----------------------------
    MOBILE STYLES
@@ -218,38 +167,56 @@ margin: 5px 0; /* smaller spacing */
 -------------------------------*/
 @media (max-width: 600px) {
 
+    /* Hide menu by default on mobile */
+    nav ul {
+        display: none; /* hidden by default */
+        flex-direction: column; /* stack links vertically */
+        align-items: center; /* center links */
+        width: 100%; /* ensure full width */
+        padding: 0; /* remove extra padding */
+    }
 
-  nav ul {
-    flex-direction: column;   /* stack links vertically */
-    align-items: center;      /* center links */
-    width: 100%;              /* ensure full width */
-    padding: 0;               /* remove extra padding */
-  }
+    nav ul.show {
+        display: flex; /* show when button clicked */
+    }
 
-  nav ul li {
-    width: 95%;               /* almost full width */
-    margin: 8px 0;            /* vertical spacing between buttons */
-  }
+    nav ul li {
+        width: 95%; /* almost full width */
+        margin: 8px 0; /* vertical spacing between buttons */
+    }
 
-  nav ul li a {
-    display: block;           /* full clickable area */
-    width: 100%;              /* fill button width */
-    text-align: center;       /* center text */
-    padding: 15px;            /* inside button spacing */
-    font-size: 1.25rem;       /* slightly bigger text */
-    
-    /* NEW COLORS */
-    background-color: #8B8680; /* medium gray button */
-    color: #000000;           /* black text for contrast */
+    nav ul li a {
+        display: block; /* full clickable area */
+        width: 100%; /* fill button width */
+        text-align: center; /* center text */
+        padding: 15px; /* inside button spacing */
+        font-size: 1.5rem; /* larger text */
+        background-color: #8B8680; /* medium gray button */
+        color: #000000; /* black text for contrast */
+        border: 1px solid #808080; /* gray border */
+        border-radius: 6px; /* rounded corners */
+        text-decoration: none; /* no underline */
+        box-sizing: border-box; /* prevent overflow */
+    }
 
-    border: 1px solid #808080; /* gray border */
-    border-radius: 6px;        /* rounded corners */
-    text-decoration: none;     /* no underline */
-    box-sizing: border-box;    /* prevent overflow */
-  }
+    nav ul li a:hover {
+        background-color: #8f8f8f; /* darker gray on hover */
+        color: #000000;
+    }
 
-  nav ul li a:hover {
-    background-color: #8f8f8f; /* darker gray on hover */
-    color: #000000;
-  }
+    section { /* sections on mobile */
+        font-size: 1.4rem; /* larger section text */
+    }
+
+    h2, h3 { /* headings on mobile */
+        font-size: 2.2rem; /* larger headings */
+    }
+
+    ul li, ol li { /* list items on mobile */
+        font-size: 1.35rem; /* larger list text */
+    }
+
+    body { /* body text on mobile */
+        font-size: 1.4rem;
+    }
 }
