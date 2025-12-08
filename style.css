@@ -133,6 +133,7 @@ img { /* image */
     border-radius: 8px;  /* rounded corners */
     cursor: pointer;     /* pointer on hover */
 }
+
 /* Shared mobile/tablet menu */
 #myLinks {
   display: none;          /* hidden by default */
@@ -153,6 +154,30 @@ img { /* image */
   color: #fff;
   text-decoration: none;
 }
+
+/* ----------------------------
+   Hamburger Menu Button
+-------------------------------*/
+
+/* Default: hide button on desktop */
+.menu-btn {
+    display: none;          /* hidden by default on large screens */
+    font-size: 3rem;        /* larger icon */
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;     /* keeps it above nav if needed */
+    z-index: 1000;          /* ensures it stays on top */
+}
+
+/* Show button on tablet and mobile only */
+@media (max-width: 1024px) {
+    .menu-btn {
+        display: block;     /* visible on tablet & mobile */
+    }
+}
+
 /* ----------------------------
    TABLET STYLES
    screens 768px – 1024px
