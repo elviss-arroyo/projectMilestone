@@ -3,7 +3,7 @@
 <head> 
 <meta charset="UTF-8"> <!-- makes letters show -->
 <title>How HTTP Works</title> <!-- name of the page on the browser tab -->
-
+<button class="menu-btn" onclick="toggleMenu()">☰</button> <!-- Hamburger menu button -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes page scale on phone and tablett --> 
   
 <link rel="stylesheet" href="style.css"> <!-- links to CSS for colors and fonts -->
@@ -14,7 +14,7 @@
 <header> <!-- title and menu -->
 <h1>How HTTP Works</h1> <!-- heading at top -->
 <nav> <!--table of conntents -->
-<ul> <!-- start list -->
+<ul id="myLinks"> <!-- start list -->
 <li class="full-width"><a href="index.html">Home</a></li>  <!-- home pagee -->
 <li><a href="how-it-works.html">How HTTP Works</a></li> <!-- this page -->
 <li><a href="impact.html">Impact of HTTP</a></li> <!-- impact page -->
@@ -25,7 +25,7 @@
 </ul> <!-- end list -->
 </nav> <!-- end table of conntents -->
 </header> <!-- end header -->
-
+<script src="hamburger.js"></script>
 <main> 
 
 <section> 
