@@ -117,88 +117,46 @@ margin: 5px 0; /* smaller spacing */
 }
 
 /* ----------------------------
-   MOBILE STYLES
-   Target: screens 600px wide or smaller
+   TABLET STYLES
+   screens 601px – 1024px
 -------------------------------*/
-@media (max-width: 600px) {             /* Apply all styles inside this block only if screen width is 600px or less */
-
-  /* Make nav links stack vertically as wide buttons */
-  .menu a {                             /* Select all links inside the navigation menu */
-    display: block;                      /* Make each link appear on its own line (stacked) */
-    width: 100%;                         /* Make each link take up the full width of the container */
-    text-align: center;                  /* Center the text inside each link */
-    padding: 15px;                       /* Add space inside each link to make it easier to tap */
-    margin-bottom: 8px;                  /* Add space between each link */
-    font-size: 1.2rem;                   /* Increase the text size for readability */
-    background-color: #e0e0e0;           /* Set a light gray background color for the button */
-    border: 1px solid #ccc;              /* Add a thin border around each button */
-    border-radius: 6px;                  /* Round the corners of the button */
-    text-decoration: none;               /* Remove the underline from links */
+@media (max-width: 1024px) and (min-width: 601px) {
+  nav ul li a {
+    font-size: 1.3rem;   /* slightly larger text */
+    padding: 8px 15px;   /* bigger clickable area */
   }
-
-  /* Enlarge font site-wide */
-  body {                                 /* Select the entire page */
-    font-size: 1.2rem;                   /* Increase the base text size for easier reading on small screens */
-    line-height: 1.5;                    /* Add extra spacing between lines for readability */
-    padding: 10px;                        /* Add some padding inside the page so text isn't touching screen edges */
-  }
-
-  /* Make buttons bigger */
-  button {                               /* Select all <button> elements */
-    font-size: 1.2rem;                   /* Increase text size inside buttons */
-    padding: 12px 20px;                  /* Increase spacing inside buttons so they are easier to tap */
-  }
-
-  /* Make images scale to screen width */
-  img {                                  /* Select all images */
-    max-width: 100%;                     /* Ensure images do not get wider than their container */
-    height: auto;                        /* Keep image height proportional to width */
-    display: block;                      /* Make images block elements to prevent weird spacing */
-    margin: 0 auto;                      /* Center images horizontally on the page */
-  }
-
-  /* Optional: spacing adjustments for sections */
-  section, article {                     /* Select all <section> and <article> elements */
-    padding: 10px 0;                     /* Add vertical spacing inside sections/articles */
-  }
-}                                       /* End of mobile media query */
+}
 
 /* ----------------------------
-   TABLET STYLES
-   Target: screens 768px wide or larger (min-width 768px)
+   MOBILE STYLES
+   screens 600px wide or smaller
 -------------------------------*/
-@media (min-width: 768px) {
-
-  /* Keep default desktop nav, but make text bigger */
-  nav ul li a {                          /* Select links in the menu */
-    font-size: 1.3rem;                   /* Make menu text larger for easier tapping on tablet */
-    padding: 8px 15px;                   /* Slightly bigger clickable area */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;   /* stack links vertically */
+    align-items: center;      /* center links */
   }
 
-  /* Enlarge font site-wide */
-  body {                                 /* Select the entire page */
-    font-size: 1.25rem;                  /* Increase text size for readability */
-    line-height: 1.6;                    /* Slightly more spacing between lines */
-    padding: 15px;                        /* Adjust padding for tablet screens */
+  nav ul li {
+    margin: 5px 0;            /* vertical spacing between buttons */
+    width: 90%;                /* nearly full width */
   }
 
-  /* Make buttons bigger (for quiz) */
-  button {                               /* Select all buttons */
-    font-size: 1.25rem;                  /* Increase text size inside buttons */
-    padding: 14px 24px;                  /* Increase spacing inside buttons for touch */
+  nav ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #e0e0e0;
+    color: #000000;            /* black text for contrast on light button */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
   }
 
-  /* Scale images */
-  img {                                  /* Select all images */
-    max-width: 100%;                     /* Ensure images do not exceed container width */
-    height: auto;                        /* Maintain aspect ratio */
-    display: block;                      /* Treat images as block elements */
-    margin: 20px auto;                   /* Center images horizontally */
+  nav ul li a:hover {
+    background-color: #d4d4d4; /* slightly darker on hover */
+    color: #000000;
   }
-
-  /* Optional: adjust spacing for sections */
-  section, article {                     /* Select all sections/articles */
-    padding: 15px 0;                     /* Add vertical padding */
-  }
-}                                       /* End of tablet media query */
-
+}
