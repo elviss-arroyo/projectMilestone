@@ -133,35 +133,83 @@ margin: 5px 0; /* smaller spacing */
    TABLET STYLES
    screens 601px – 1024px
 -------------------------------*/
-@media (max-width: 1024px) and (min-width: 601px) {
+@media (max-width: 1024px) and (min-width: 768px) {
 
   body { /* main page area for tablet */
-    font-size: 1.3rem;          /* bigger text for all paragraphs */
+    font-size: 1.4rem;          /* bigger text for all paragraphs */
     line-height: 2;              /* keep spacing */
     margin: 0;                   /* remove large desktop margins */
+    padding: 0;                  /* remove extra padding */
   }
 
   h2, h3 { /* headings inside section for tablet */
-    font-size: 2rem;             /* larger headings */
+    font-size: 2.2rem;           /* extra large headings */
+    margin-top: 0;               /* remove top space */
   }
 
-  nav ul li a { /* menu buttons for tablet */
+  nav { /* table of contents background for tablet */
+    background-color: #1c1b1a;   /* keep gray background */
+  }
+
+  nav ul { /* list inside table of contents for tablet */
+    display: flex;               /* horizontal layout */
+    justify-content: center;     /* center buttons */
+    flex-wrap: wrap;             /* allow buttons to move to next line */
+    list-style: none;            /* remove bullets */
+    margin: 0;                   /* remove margin */
+    padding: 10px 0;             /* spacing top & bottom */
+  }
+
+  nav ul li { /* each menu item for tablet */
+    margin: 5px 10px;            /* spacing between buttons */
+  }
+
+  nav ul li a { /* links in menu for tablet */
+    color: #ffffff;              /* white text */
+    font-weight: bold;           /* bold */
     padding: 12px 18px;          /* bigger touch area */
     font-size: 1.5rem;           /* extra large nav text */
     text-align: center;          /* center button text */
     border-radius: 8px;          /* smoother button shape */
+    display: inline-block;       /* clickable box */
+  }
+
+  nav ul li a:hover { /* hover effect for tablet */
+    background-color: #383633;   /* dark gray bg */
+    border-radius: 8px;          /* round corners */
   }
 
   section { /* each section on tablet */
+    background-color: #1c1b1a;   /* background color */
     padding: 25px;               /* a little more padding */
+    margin-bottom: 20px;         /* space below section */
+    border: 1px solid #383633;   /* border color */
+    border-radius: 5px;          /* rounded corners */
     max-width: 900px;            /* keep max width */
+    width: 90%;                  /* relative width */
   }
 
-  ul li, ol li { /* list items */
+  ul li, ol li { /* list items for tablet */
     font-size: 1.25rem;          /* larger list text */
     margin-bottom: 12px;         /* slightly more spacing */
   }
+
+  main { /* main content area for tablet */
+    display: flex;               /* flex layout */
+    flex-direction: column;      /* stack vertical */
+    align-items: center;         /* center horizontally */
+    padding: 20px;               /* inside spacing */
+  }
+
+  footer { /* bottom for tablet */
+    background-color: #383633;   /* gray */
+    color: #ffffff;              /* text white */
+    text-align: center;          /* center text */
+    padding: 15px 10px;          /* padding inside */
+    border-top: 1px solid #1c1b1a; /* top border */
+  }
 }
+
 
 
 /* ----------------------------
