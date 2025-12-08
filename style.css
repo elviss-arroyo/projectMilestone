@@ -150,36 +150,37 @@ margin: 5px 0; /* smaller spacing */
     outline: 5px solid red; /* red border around page */
   }
 
-  nav ul li a {
-    background-color: yellow !important; /* highlight nav buttons */
-    color: black !important;
-    font-size: 1.25rem; /* mobile slightly bigger */
-  }
-
   nav ul {
     flex-direction: column;   /* stack links vertically */
     align-items: center;      /* center links */
+    width: 100%;              /* ensure full width */
+    padding: 0;               /* remove extra padding */
   }
 
   nav ul li {
-    margin: 5px 0;            /* vertical spacing between buttons */
-    width: 90%;                /* nearly full width */
+    width: 95%;               /* almost full width */
+    margin: 8px 0;            /* vertical spacing between buttons */
   }
 
   nav ul li a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-    background-color: #e0e0e0;
-    color: #000000;            /* black text for contrast on light button */
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    text-decoration: none;
+    display: block;           /* full clickable area */
+    width: 100%;              /* fill button width */
+    text-align: center;       /* center text */
+    padding: 15px;            /* inside button spacing */
+    font-size: 1.25rem;       /* slightly bigger text */
+    
+    /* NEW COLORS */
+    background-color: #a8a8a8 !important; /* medium gray button */
+    color: #000000 !important;           /* black text for contrast */
+
+    border: 1px solid #808080; /* gray border */
+    border-radius: 6px;        /* rounded corners */
+    text-decoration: none;     /* no underline */
+    box-sizing: border-box;    /* prevent overflow */
   }
 
   nav ul li a:hover {
-    background-color: #d4d4d4; /* slightly darker on hover */
-    color: #000000;
+    background-color: #8f8f8f !important; /* darker gray on hover */
+    color: #000000 !important;
   }
 }
