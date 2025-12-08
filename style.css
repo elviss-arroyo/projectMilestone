@@ -145,10 +145,7 @@ margin: 5px 0; /* smaller spacing */
    screens 600px wide or smaller
 -------------------------------*/
 @media (max-width: 600px) {
-  /* TEMPORARY TEST HIGHLIGHT - REMOVE LATER */
-  body {
-    outline: 5px solid red; /* red border around page */
-  }
+
 
   nav ul {
     flex-direction: column;   /* stack links vertically */
