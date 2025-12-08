@@ -128,10 +128,10 @@ img { /* image */
 
 /* Enlarge all quiz buttons */
 #exam button {
-    font-size: 2rem !important;   /* bigger text */
-    padding: 15px 30px !important;  /* bigger button */
-    border-radius: 8px !important;  /* rounded corners */
-    cursor: pointer !important;     /* pointer on hover */
+    font-size: 2rem;   /* bigger text */
+    padding: 15px 30px;  /* bigger button */
+    border-radius: 8px;  /* rounded corners */
+    cursor: pointer;     /* pointer on hover */
 }
 
 /* ----------------------------
