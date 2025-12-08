@@ -135,24 +135,34 @@ margin: 5px 0; /* smaller spacing */
 -------------------------------*/
 @media (max-width: 1024px) and (min-width: 601px) {
 
-  /* center the nav container better */
-  nav ul {
-    justify-content: center;   /* spread evenly */
-    gap: 12px;                 /* space between buttons */
-    padding: 0 10px;           /* padding so edges don't touch screen */
+  body { /* main page area for tablet */
+    font-size: 1.3rem;          /* bigger text for all paragraphs */
+    line-height: 2;              /* keep spacing */
+    margin: 0;                   /* remove large desktop margins */
   }
 
-  nav ul li {
-    margin: 0;                 /* remove large desktop margins */
+  h2, h3 { /* headings inside section for tablet */
+    font-size: 2rem;             /* larger headings */
   }
 
-  nav ul li a {
-    padding: 12px 18px;        /* bigger touch area */
-    font-size: 1.25rem;        /* slightly bigger text */
-    text-align: center;        /* center button text */
-    border-radius: 8px;        /* smoother button shape */
+  nav ul li a { /* menu buttons for tablet */
+    padding: 12px 18px;          /* bigger touch area */
+    font-size: 1.5rem;           /* extra large nav text */
+    text-align: center;          /* center button text */
+    border-radius: 8px;          /* smoother button shape */
+  }
+
+  section { /* each section on tablet */
+    padding: 25px;               /* a little more padding */
+    max-width: 900px;            /* keep max width */
+  }
+
+  ul li, ol li { /* list items */
+    font-size: 1.25rem;          /* larger list text */
+    margin-bottom: 12px;         /* slightly more spacing */
   }
 }
+
 
 /* ----------------------------
    MOBILE STYLES
