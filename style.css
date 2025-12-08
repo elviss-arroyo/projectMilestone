@@ -133,7 +133,26 @@ img { /* image */
     border-radius: 8px;  /* rounded corners */
     cursor: pointer;     /* pointer on hover */
 }
+/* Shared mobile/tablet menu */
+#myLinks {
+  display: none;          /* hidden by default */
+  flex-direction: column; /* stack links vertically */
+  background-color: #000; /* menu background */
+  padding: 10px;
+}
 
+#myLinks.show {
+  display: block;         /* shown when toggled */
+}
+
+#myLinks li {
+  margin: 8px 0;          /* spacing between links */
+}
+
+#myLinks li a {
+  color: #fff;
+  text-decoration: none;
+}
 /* ----------------------------
    TABLET STYLES
    screens 768px – 1024px
