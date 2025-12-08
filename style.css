@@ -82,7 +82,7 @@ section { /* each section */
     border-radius: 5px; /* rounded corners */
     max-width: 900px; /* max width */
     width: 90%; /* relative width */
-    font-size: 1.3rem; /* larger section text */
+    font-size: 2rem; /* larger section text */
 }
 
 h2, h3 { /* headings inside section */
