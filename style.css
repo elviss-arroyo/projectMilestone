@@ -134,11 +134,25 @@ margin: 5px 0; /* smaller spacing */
    screens 601px – 1024px
 -------------------------------*/
 @media (max-width: 1024px) and (min-width: 601px) {
+
+  /* center the nav container better */
+  nav ul {
+    justify-content: center;   /* spread evenly */
+    gap: 12px;                 /* space between buttons */
+    padding: 0 10px;           /* padding so edges don't touch screen */
+  }
+
+  nav ul li {
+    margin: 0;                 /* remove large desktop margins */
+  }
+
   nav ul li a {
-    font-size: 1.25rem;   /* tablet slightly bigger */
+    padding: 12px 18px;        /* bigger touch area */
+    font-size: 1.25rem;        /* slightly bigger text */
+    text-align: center;        /* center button text */
+    border-radius: 8px;        /* smoother button shape */
   }
 }
-
 
 /* ----------------------------
    MOBILE STYLES
