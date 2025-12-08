@@ -175,60 +175,46 @@ img { /* image */
 -------------------------------*/
 @media (max-width: 600px) {
 
-    /* Use grid for nav to allow side-by-side buttons */
-  nav ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 10px;
-    padding: 10px;
-    align-items: stretch; /* make all items same height in each row */
-}
-
-
-    nav ul li {
-        margin: 0; /* remove vertical spacing, handled by gap */
+    /* Use grid layout for nav buttons */
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+        gap: 10px; /* spacing between buttons */
+        padding: 10px;
     }
 
-    /* Full-width buttons */
-    nav ul li:first-child, /* Home */
-    nav ul li:nth-child(4), /* Key Concepts */
-    nav ul li:last-child { /* About */
+    nav ul li {
+        margin: 0; /* spacing handled by gap */
+    }
+
+    /* Make specific buttons full-width */
+    nav ul li.full-width {
         grid-column: span 2; /* span both columns */
     }
 
     nav ul li a {
         display: block; /* full clickable area */
-        width: 100%; /* fill button width */
-        text-align: center; /* center text */
-        padding: 15px; /* inside button spacing */
-        font-size: 1.5rem; /* larger text */
-        background-color: #b0b0b0; /* lighter gray for contrast */
-        color: #000000; /* black text */
-        border: 1px solid #808080; /* gray border */
-        border-radius: 6px; /* rounded corners */
-        text-decoration: none; /* no underline */
-        box-sizing: border-box; /* prevent overflow */
-        transition: background-color 0.3s, color 0.3s; /* smooth hover */
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        font-size: 1.5rem; /* uniform text size */
+        background-color: #b0b0b0;
+        color: #000000;
+        border: 1px solid #808080;
+        border-radius: 6px;
+        text-decoration: none;
+        box-sizing: border-box;
+        transition: background-color 0.3s, color 0.3s;
     }
 
     nav ul li a:hover {
-        background-color: #808080; /* darker gray on hover */
-        color: #ffffff; /* text becomes white */
+        background-color: #808080;
+        color: #ffffff;
     }
 
-    section { /* sections on mobile */
-        font-size: 2rem; /* keep section font at 2 */
-    }
-
-    h2, h3 { /* headings on mobile */
-        font-size: 2.2rem; /* larger headings */
-    }
-
-    ul li, ol li { /* list items on mobile */
-        font-size: 1.35rem; /* larger list text */
-    }
-
-    body { /* body text on mobile */
-        font-size: 1.4rem;
-    }
+    /* Optional: sections and text size on mobile */
+    section { font-size: 2rem; }
+    h2, h3 { font-size: 2.2rem; }
+    ul li, ol li { font-size: 1.35rem; }
+    body { font-size: 1.4rem; }
 }
