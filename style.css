@@ -167,9 +167,6 @@ img { /* image */
 -------------------------------*/
 @media (max-width: 600px) {
 
-
-    }
-
     nav ul li {
         width: 95%; /* almost full width */
         margin: 8px 0; /* vertical spacing between buttons */
@@ -209,15 +206,16 @@ img { /* image */
     body { /* body text on mobile */
         font-size: 1.4rem;
     }
-}
-/* Enlarge quiz submit and reset buttons */
-input[type="submit"],
-button[type="submit"],
-input[type="reset"],
-button[type="reset"] {
-    font-size: 2rem;   /* bigger text */
-    padding: 15px 30px;  /* bigger button */
-    border-radius: 8px;  /* rounded corners */
-    cursor: pointer;     /* pointer on hover */
-}
 
+    /* Enlarge quiz submit and reset buttons for mobile */
+    input[type="submit"],
+    button[type="submit"],
+    input[type="reset"],
+    button[type="reset"] {
+        font-size: 2rem;   /* bigger text */
+        padding: 15px 30px;  /* bigger button */
+        border-radius: 8px;  /* rounded corners */
+        cursor: pointer;     /* pointer on hover */
+    }
+
+}
