@@ -137,140 +137,98 @@ img { /* image */
 /* ----------------------------
    Shared mobile/tablet menu
 -------------------------------*/
+
+/* Default: desktop menu visible, no hamburger */
 #myLinks {
-  display: flex;           /* show on desktop by default */
-  flex-direction: row;     /* horizontal on desktop */
-  background-color: #1c1b1a; /* match nav */
-  padding: 10px;
+    display: flex;       /* show horizontal menu on desktop */
+    flex-direction: row; /* horizontal */
 }
 
-#myLinks li {
-  margin: 0 15px;          /* desktop spacing */
-}
-
-#myLinks li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Tablet & Mobile: hide menu by default, show on toggle */
-@media (max-width: 1024px) {
-    #myLinks {
-        display: none;          /* hidden on tablet/mobile */
-        flex-direction: column; /* vertical stack */
-        background-color: #000; /* menu background */
-        padding: 10px;
-    }
-
-    #myLinks.show {
-        display: block;         /* show when toggled */
-    }
-
-    #myLinks li {
-        margin: 8px 0;          /* spacing between links */
-    }
-}
-
-/* ----------------------------
-   Hamburger Menu Button
--------------------------------*/
-
-/* Default: hide button on desktop */
 .menu-btn {
-    display: none;          /* hidden by default on large screens */
-    font-size: 3rem;        /* larger icon */
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    position: relative;     /* keeps it above nav if needed */
-    z-index: 1000;          /* ensures it stays on top */
+    display: none;       /* hide on desktop */
 }
 
-/* Show button on tablet and mobile only */
-@media (max-width: 1024px) {
-    .menu-btn {
-        display: block;     /* visible on tablet & mobile */
-    }
-}
-
-/* ----------------------------
-   TABLET STYLES
-   screens 768px – 1024px
--------------------------------*/
+/* Tablet styles */
 @media (max-width: 1024px) and (min-width: 768px) {
-
-    body { /* main page area for tablet */
-        font-size: 1.5rem; /* bigger text for all paragraphs */
-        line-height: 1.75; /* keep spacing */
-        margin: 0; /* remove large desktop margins */
-        padding: 0; /* remove extra padding */
+    /* Hide menu by default on tablet */
+    #myLinks {
+        display: none;
+        flex-direction: column;
     }
 
-    h2, h3 { /* headings inside section for tablet */
-        font-size: 2.5rem; /* extra large headings */
+    /* Show menu when toggled */
+    #myLinks.show {
+        display: flex;
     }
 
-    nav ul { /* list inside table of contents for tablet */
-        flex-wrap: wrap; /* allow buttons to move to next line */
-    }
-
-    nav ul li a { /* links in menu for tablet */
-        font-size: 1.8rem; /* extra large nav text */
-        padding: 15px 20px; /* bigger touch area */
-    }
-
-    section { /* each section on tablet */
-        font-size: 2rem; /* keep section font at 2 */
-    }
-
-    ul li, ol li { /* list items for tablet */
-        font-size: 1.35rem; /* larger list text */
+    /* Hamburger button */
+    .menu-btn {
+        display: block;
+        font-size: 3rem;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        z-index: 1000;
     }
 }
 
-/* ----------------------------
-   MOBILE STYLES
-   screens 600px wide or smaller
--------------------------------*/
-@media (max-width: 600px) {              /* Only applies to screens 600px or smaller (mobile) */
+/* Mobile styles */
+@media (max-width: 600px) {
+    /* Hide menu by default on mobile */
+    #myLinks {
+        display: none;
+        flex-direction: column;
+    }
 
-  nav ul {                               /* Select the list containing nav buttons */
-    display: grid;                        /* Use grid layout */
-    grid-template-columns: repeat(2, 1fr);/* 2 equal columns */
-    gap: 10px;                            /* Space between grid items */
-    padding: 10px;                        /* Padding inside the nav */
-    align-items: stretch;                  /* Make all items in a row same height */
-  }
+    /* Show menu when toggled */
+    #myLinks.show {
+        display: flex;
+    }
 
-  nav ul li {                             /* Each list item (button container) */
-    margin: 0;                             /* Remove default margin */
-    display: flex;                         /* Make li a flex container so a fills the height */
-  }
+    /* Hamburger button */
+    .menu-btn {
+        display: block;
+        font-size: 3rem;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        z-index: 1000;
+    }
 
-  nav ul li.full-width {                   /* List items with class full-width */
-    grid-column: span 2;                   /* Make these items span 2 columns */
-  }
+    nav ul { /* Mobile grid layout */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+        align-items: stretch;
+    }
 
-  nav ul li a {                            /* The link inside each list item */
-    display: flex;                          /* Make link a flex container */
-    align-items: center;                    /* Center text vertically */
-    justify-content: center;                /* Center text horizontally */
-    width: 100%;                            /* Make link fill the full li width */
-    padding: 15px;                          /* Space inside the button */
-    font-size: 1.5rem;                      /* Text size */
-    background-color: #b0b0b0;             /* Button background color */
-    color: #000;                            /* Text color */
-    border: 1px solid #808080;             /* Button border */
-    border-radius: 6px;                     /* Rounded corners */
-    text-decoration: none;                  /* Remove underline */
-    box-sizing: border-box;                 /* Include padding/border in width */
-    transition: background-color 0.3s, color 0.3s; /* Smooth hover transition */
-  }
+    nav ul li.full-width {
+        grid-column: span 2;
+    }
 
-  nav ul li a:hover {                      /* When mouse hovers over link */
-    background-color: #808080;             /* Darker background */
-    color: #fff;                            /* White text */
-  }
+    nav ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 15px;
+        font-size: 1.5rem;
+        background-color: #b0b0b0;
+        color: #000;
+        border: 1px solid #808080;
+        border-radius: 6px;
+        text-decoration: none;
+        box-sizing: border-box;
+        transition: background-color 0.3s, color 0.3s;
+    }
 
+    nav ul li a:hover {
+        background-color: #808080;
+        color: #fff;
+    }
 }
